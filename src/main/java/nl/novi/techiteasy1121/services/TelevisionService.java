@@ -67,6 +67,7 @@ public class TelevisionService {
     // In deze methode moeten we twee keer een vertaalmethode toepassen.
     // De eerste keer van dto naar televsion, omdat de parameter een dto is.
     // De tweede keer van television naar dto, omdat de return waarde een dto is.
+    // !! Geeft internal server error als je bovenop een bestaande id probeert te posten. Na de error 500 telt het wel op naar de volgende id
     public TelevisionDto addTelevision(TelevisionInputDto dto) {
         Television tv = transferToTelevision(dto);
         televisionRepository.save(tv);
